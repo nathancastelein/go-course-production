@@ -1,7 +1,7 @@
 package logging
 
 import (
-	"io/ioutil"
+	"io"
 	"log/slog"
 	"net/http"
 	"net/http/httptest"
@@ -13,7 +13,7 @@ import (
 func BenchmarkLogging(b *testing.B) {
 	// Arrange
 	// Drop logs
-	logger := slog.New(slog.NewJSONHandler(ioutil.Discard, nil))
+	logger := slog.New(slog.NewJSONHandler(io.Discard, nil))
 	slog.SetDefault(logger)
 
 	// Prepare a new request request
