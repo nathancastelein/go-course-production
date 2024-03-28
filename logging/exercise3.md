@@ -2,6 +2,17 @@
 
 Let's now use our logger from context!
 
+## Add context modification
+
+Add those four lines into your function to modify the context:
+
+```golang
+ctx := c.Request().Context()
+ctx = NewContextWithRequestID(ctx, requestId)
+ctx = NewContextWithLogger(ctx, logger)
+c.SetRequest(c.Request().WithContext(ctx))
+```
+
 ## Log user from query param
 
 Open [handler.go](./handler.go) file:

@@ -5,10 +5,8 @@ import (
 	"os"
 	"time"
 
-	//"github.com/google/uuid"
-	//"github.com/google/uuid"
+	"github.com/google/uuid"
 	"github.com/labstack/echo/v4"
-	uuid "github.com/nu7hatch/gouuid"
 )
 
 func Logger() echo.MiddlewareFunc {
@@ -16,14 +14,7 @@ func Logger() echo.MiddlewareFunc {
 		return func(c echo.Context) error {
 			requestId := c.Request().Header.Get("X-Request-Id")
 			if requestId == "" {
-				//requestId = uuid.New().String()
-
-				requestUuid, err := uuid.NewV4()
-				if err != nil {
-					return err
-				}
-				requestId = requestUuid.String()
-
+				requestId = uuid.New().String()
 			}
 
 			logger := slog.With(
