@@ -4,7 +4,7 @@ Let's now use our logger from context!
 
 ## Add context modification
 
-Add those four lines into your function to modify the context:
+Add those four lines into your Logger middleware to modify the context:
 
 ```golang
 ctx := c.Request().Context()
