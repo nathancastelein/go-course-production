@@ -39,3 +39,8 @@ go test -run 'TestLoggerMiddlewareSuite/TestLogWithRequestID'
 ## Add elapsed time in your logs
 
 Using time package and [time.Since](https://pkg.go.dev/time#Since) function, add a new field `elapsed_time` in your log to print the elapsed time in milliseconds on the `request handled` log.
+
+Test your code:
+```
+go test -run 'TestLoggerMiddlewareSuite/TestLogWithElapsedTime'
+```
