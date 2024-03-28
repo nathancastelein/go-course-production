@@ -5,7 +5,7 @@ func FizzbuzzWithCustomError(input int) (string, error) {
 }
 
 func MyFizzbuzzProcessWithCustomError(input int) error {
-	// Call FizzbuzzWithSentinelError
+	// Call FizzbuzzWithCustomError
 	// If error is an InvalidInput error, return nil
 	// Else return the error
 	// Otherwise print the result
