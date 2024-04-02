@@ -21,8 +21,12 @@ Read the result, then try to understand it.
 ### Current implementation
 
 Now, run the benchmark 10 times and output the result into a file, named `old.txt`.
-To run a test or a benchmark multiple times, you can use a flag. See `go help testflag`.
-You can also add the `-membench` flag to get more information.
+
+```
+go test -count 10 -benchmem -bench .
+```
+
+See `go help testflag` to understand the flags.
 
 ### New implementation
 

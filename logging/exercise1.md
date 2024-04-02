@@ -29,7 +29,7 @@ go test -run 'TestLoggerMiddlewareSuite/TestLogWithAttributes'
 Add some attributes on your logs `handle request` and `request handled`:
 - From the incoming http request, extract the `X-Request-Id` header
 - If request id is empty, generate a new one using `uuid.New().String()` from [google/uuid](https://github.com/google/uuid) package
-- Add the request id in your logs as an attribute
+- Add the request id in your logs as an attribute named `request_id`
 
 Test your code:
 ```
