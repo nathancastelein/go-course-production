@@ -19,6 +19,8 @@ Add some attributes on your logs `handle request` and `request handled`:
 - An attribute `http_method` with the request's method
 - An attribute `http_uri` with the request's URI
 
+To get those information, you can get an `*http.Request` with `c.Request()`. Check the [http.Request documentation](https://pkg.go.dev/net/http#Request).
+
 Test your code:
 ```
 go test -run 'TestLoggerMiddlewareSuite/TestLogWithAttributes'
