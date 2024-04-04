@@ -10,7 +10,11 @@ import (
 func Logger() echo.MiddlewareFunc {
 	return func(next echo.HandlerFunc) echo.HandlerFunc {
 		return func(c echo.Context) error {
-			return next(c)
+			if err := next(c); err != nil {
+				return err
+			}
+
+			return nil
 		}
 	}
 }
